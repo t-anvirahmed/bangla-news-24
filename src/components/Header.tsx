@@ -1,6 +1,8 @@
 import Image from "next/image";
 import React from "react";
 import NavLinks from "./NavLinks";
+import Link from "next/link";
+import UserInfo from "./UserInfo";
 
 const Header = () => {
   const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
@@ -24,13 +26,7 @@ const Header = () => {
           </div>
         </div>
         {/* Right-side Buttons */}
-        <div className="ml-auto flex items-center gap-1 sm:gap-2">
-          <button className="btn btn-xs border-none sm:btn-md">সাইন ইন</button>
-
-          <button className="btn btn-xs btn-error bg-red-700 text-white sm:btn-md">
-            সাইন আপ
-          </button>
-        </div>
+        <UserInfo />
       </div>
       <NavLinks />
     </div>

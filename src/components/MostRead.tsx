@@ -10,7 +10,7 @@ const MostRead = async () => {
   const data = await res.json();
   //   console.log(data);
   const news: MostReadNews[] = data.data;
-  console.log(news);
+  // console.log(news);
   return (
     <div>
       <div>
