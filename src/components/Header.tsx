@@ -1,11 +1,10 @@
 import Image from "next/image";
-import React from "react";
+import React, { Suspense } from "react";
 import NavLinks from "./NavLinks";
-import Link from "next/link";
 import UserInfo from "./UserInfo";
+import CurrentDate from "./CurrentDate";
 
 const Header = () => {
-  const date = new Date().toLocaleDateString("bn-BD", { dateStyle: "full" });
   return (
     <div className="container mx-auto my-4">
       <div className="relative flex min-h-16 w-full items-center justify-between px-2 sm:px-4">
@@ -22,7 +21,9 @@ const Header = () => {
             <h2 className="whitespace-nowrap text-sm text-red-700 font-light sm:text-3xl">
               BanglaNews24
             </h2>
-            <p className="whitespace-nowrap text-xs sm:text-sm">{date}</p>
+            <Suspense fallback={<p>তারিখ লোড হচ্ছে...</p>}>
+              <CurrentDate />
+            </Suspense>
           </div>
         </div>
         {/* Right-side Buttons */}

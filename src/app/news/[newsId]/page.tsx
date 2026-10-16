@@ -17,6 +17,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 
 interface ArticleBlock {
   type: "text" | "image" | "subheading";
@@ -77,7 +78,7 @@ const NewsDetails = async ({
   );
 
   if (!res.ok) {
-    throw new Error("Failed to fetch news article");
+    notFound();
   }
 
   const result = await res.json();

@@ -6,7 +6,7 @@ import React from "react";
 const ProfilePage = () => {
   const { data: session } = authClient.useSession();
   const user = session?.user;
-  console.log(user);
+  // console.log(user);
 
   const handleUpdateProfile = async (e: React.SubmitEvent<HTMLElement>) => {
     e.preventDefault();
